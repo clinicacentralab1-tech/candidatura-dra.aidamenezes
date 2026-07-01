@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Aida Azancot de Menezes | Candidata à Presidência do Colégio de Medicina do Trabalho</title>
+    
+    <!-- Google Fonts: Montserrat para uma tipografia limpa e moderna -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones modernos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. VARIÁVEIS DE DESIGN E CONFIGURAÇÕES GERAIS
+           ========================================================================== */
+        :root {
+            --primary-color: #0b1d3a;    /* Azul-escuro institucional do flyer */
+            --accent-color: #d4a342;     /* Dourado para destaques e botões */
+            --accent-hover: #b8862d;     /* Tom mais escuro de dourado para interações */
+            --bg-light: #f8fafc;         /* Fundo claro para excelente legibilidade */
+            --text-dark: #1e293b;        /* Texto principal escuro */
+            --text-light: #ffffff;       /* Texto claro */
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ==========================================================================
+           2. NAVEGAÇÃO / CABEÇALHO
+           ========================================================================== */
+        header {
+            background-color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-logo {
+            width: 50px; /* Substituir pelo logo da Ordem dos Médicos se disponível */
+            height: auto;
+        }
+
+        .brand-text {
+            color: var(--text-light);
+        }
+
+        .brand-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-item a {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .nav-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /* ==========================================================================
+           3. SECÇÃO HERO (DESTAQUE)
+           ========================================================================== */
+        .hero {
+            background: linear-gradient(135deg, #0b1d3a 0%, #050d1a 100%);
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212,163,66,0.05) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-pretitle {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero-title span.highlight-gold {
+            color: var(--accent-color);
+        }
+
+        .hero-badge-container {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .hero-badge {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-candidate {
+            margin-top: 35px;
+        }
+
+        .hero-candidate-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            line-height: 1.2;
+        }
+
+        .hero-candidate-name span {
+            color: var(--accent-color);
+            font-family: Georgia, serif; /* Estilo caligráfico ou serifa para o "Dra." */
+            font-style: italic;
+            font-size: 1.8rem;
+        }
+
+        .hero-candidate-role {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Foto da candidata */
+        .hero-image-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            z-index: 2;
+        }
+
+        .hero-circle-backdrop {
+            position: absolute;
+            bottom: 0;
+            width: 85%;
+            height: 85%;
+            border: 3px solid var(--accent-color);
+            border-radius: 50% 50% 0 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0 0 100px 100px;
+            /* Filtro opcional para integrar com o fundo azul de forma harmónica */
+            filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.5)); 
+        }
+
+        /* ==========================================================================
+           4. SECÇÃO MANIFESTO / PILARES (OS QUATRO PILARES DO FLYER)
+           ========================================================================== */
+        .manifesto {
+            padding: 100px 0;
+            background-color: var(--text-light);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-tag {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-top: 15px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .pillar-card {
+            background-color: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--accent-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(11,29,58,0.08);
+            border-color: transparent;
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pillar-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(212, 163, 66, 0.1);
+            color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover .pillar-icon-wrapper {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+        }
+
+        .pillar-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pillar-desc {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        /* ==========================================================================
+           5. SECÇÃO SOBRE MIM (BIOGRAFIA)
+           ========================================================================== */
+        .biography {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .bio-image-wrapper {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .bio-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 10px solid rgba(255,255,255,0.2);
+            pointer-events: none;
+            border-radius: var(--border-radius);
+        }
+
+        .bio-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .bio-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .bio-text p {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .bio-highlights {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .bio-highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .bio-highlight-icon {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .bio-highlight-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* ==========================================================================
+           6. BANNER DE APELO E VALORES (INTERMEDIÁRIO)
+           ========================================================================== */
+        .compromisso-banner {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .compromisso-text {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* ==========================================================================
+           7. SECÇÃO DE APELO AO VOTO (CALL TO ACTION)
+           ========================================================================== */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(11,29,58,0.95), rgba(11,29,58,0.95)), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1470&auto=format&fit=crop') center/cover no-repeat;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-icon {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+        }
+
+        .cta-title {
+            font-size: 2.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(212,163,66,0.3);
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212,163,66,0.2);
+        }
+
+        /* ==========================================================================
+           8. RODAPÉ (FOOTER)
+           ========================================================================== */
+        footer {
+            background-color: #050d1a;
+            color: #94a3b8;
+            padding: 60px 0 30px 0;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-brand-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        .footer-brand-subtitle {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+        }
+
+        .footer-social-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: flex-end;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-action-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .footer-action-item:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            padding-top: 30px;
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 10px;
+        }
+
+        /* ==========================================================================
+           9. RESPONSIVIDADE (MEDIA QUERIES)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .hero-badge-container {
+                display: block;
+                max-width: max-content;
+                margin: 0 auto 30px auto;
+                border-left: none;
+                border-bottom: 4px solid var(--accent-color);
+                border-radius: var(--border-radius);
+            }
+
+            .hero-image-container {
+                order: -1; /* Coloca a foto no topo em ecrãs móveis */
+            }
+
+            .hero-circle-backdrop {
+                width: 300px;
+                height: 300px;
+                border-radius: 50%;
+                bottom: 10px;
+            }
+
+            .hero-image {
+                max-width: 280px;
+                border-radius: 50%;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .bio-image-wrapper {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-social-actions {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none; /* Em projetos de produção reais, recomenda-se a inclusão de um menu toggle */
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-candidate-name {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .compromisso-text {
+                font-size: 1.2rem;
+                padding: 0 15px;
+            }
+
+            .cta-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+       CABECALHO / NAVEGACAO
+       ========================================================================== -->
+    <header>
+        <div class="container nav-container">
+            <div class="brand">
+                <!-- Substituir o ícone por um ficheiro svg ou png real do logo se aplicável -->
+                <i class="fa-solid fa-caduceus-staff" style="color: var(--accent-color); font-size: 1.8rem;"></i>
+                <div class="brand-text">
+                    <div class="brand-title">Ordem dos Médicos de Angola</div>
+                    <div class="brand-subtitle">Colégio de Especialidade de Medicina do Trabalho (CEMT)</div>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#inicio">Início</a></li>
+                    <li class="nav-item"><a href="#sobre">A Candidata</a></li>
+                    <li class="nav-item"><a href="#pilares">Compromissos</a></li>
+                    <li class="nav-item"><a href="#votar">Votar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+       SECCAO HERO (INICIO DO SITE)
+       ========================================================================== -->
+    <section id="inicio" class="hero">
+        <div class="container hero-grid">
+            
+            <!-- Conteúdo de texto à esquerda -->
+            <div class="hero-content">
+                <div class="hero-pretitle">Candidatura Institucional</div>
+                <h1 class="hero-title">
+                    Qualificar para <span class="highlight-gold">Proteger</span>.<br>
+                    Inovar para <span class="highlight-gold">Servir</span>.<br>
+                    Liderar com Competência.
+                </h1>
+                
+                <div class="hero-badge-container">
+                    <span class="hero-badge">Por uma Medicina do Trabalho de Excelência em Angola</span>
+                </div>
+
+                <div class="hero-candidate">
+                    <div class="hero-candidate-name"><span>Dra.</span> AIDA AZANCOT DE MENEZES</div>
+                    <div class="hero-candidate-role">Candidata à Presidência do Colégio de Especialidade de Medicina do Trabalho</div>
+                </div>
+            </div>
+
+            <!-- Imagem de Destaque à direita -->
+            <div class="hero-image-container">
+                <div class="hero-circle-backdrop"></div>
+                <!-- SUBSTITUIR: Insira aqui a foto oficial da candidata (Fundo transparente ou estúdio) -->
+                <img src="draida.png" alt="Dra. Aida Azancot de Menezes" class="hero-image">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECCAO SOBRE MIM (BIOGRAFIA)
+       ========================================================================== -->
+    <section id="sobre" class="biography">
+        <div class="container bio-grid">
+            
+            <!-- Imagem secundária ou de perfil institucional -->
+            <div class="bio-image-wrapper">
+                <!-- SUBSTITUIR: Insira aqui uma foto secundária da candidata no seu ambiente de trabalho ou corporativo -->
+                <img src="draida.png" alt="Dra. Aida Azancot de Menezes em atividade" class="bio-image">
+            </div>
+
+            <!-- Biografia e Percurso -->
+            <div class="bio-content">
+                <span class="section-tag">Perfil Profissional</span>
+                <h3>Dra. Aida Azancot de Menezes</h3>
+                <div class="bio-text">
+                    <!-- Substituir ou ajustar os parágrafos de acordo com o histórico real da candidata -->
+                    <p>
+                        A Dra. Aida Azancot de Menezes é uma profissional de reconhecido mérito na área da Medicina do Trabalho em Angola, somando anos de dedicação clínica, académica e de gestão na área da saúde ocupacional. O seu percurso reflete o compromisso com a saúde e segurança de quem trabalha.
+                    </p>
+                    <p>
+                        Com uma visão integradora e assente nas necessidades reais do contexto laboral angolano, propõe-se a liderar o Colégio de Especialidade com o desígnio de aproximar a instituição dos especialistas e elevar as boas práticas da área a nível nacional.
+                    </p>
+                    <p>
+                        Esta candidatura nasce do compromisso de unir a classe, promover a atualização científica constante e assegurar que a Medicina do Trabalho seja devidamente valorizada e respeitada como pilar de desenvolvimento do país.
+                    </p>
+                </div>
+
+                <div class="bio-highlights">
+                    <div class="bio-highlight-item">
+                        <i class="fa-solid fa-graduation-cap bio-highlight-icon"></i>
+                        <span class="bio-highlight-text">Especialista de referência em Angola</span>
+                    </div>
+                    <div class="bio-highlight-item">
+                        <i class="fa-solid fa-hands-holding-child bio-highlight-icon"></i>
+                        <span class="bio-highlight-text">Compromisso com a ética e a classe</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       BANNER DE VALORES E COMPROMISSO
+       ========================================================================== -->
+    <section class="compromisso-banner">
+        <div class="container">
+            <h2 class="compromisso-text">
+                "Compromisso com a vida. Compromisso com Angola."
+            </h2>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECCAO PILARES DO MANDATO (MANIFESTO)
+       ========================================================================== -->
+    <section id="pilares" class="manifesto">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-tag">O Nosso Manifesto</span>
+                <h2 class="section-title">Pilares da Candidatura</h2>
+                <p class="section-subtitle">Conheça as linhas de ação prioritárias estruturadas para transformar e valorizar a Medicina do Trabalho.</p>
+            </div>
+
+            <div class="pillars-grid">
+                
+                <!-- Pilar 1: Proteger -->
+                <div class="pillar-card">
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h4 class="pillar-title">Proteger</h4>
+                    <p class="pillar-desc">Assegurar a saúde física e mental do trabalhador em todos os ecossistemas profissionais de Angola.</p>
+                </div>
+
+                <!-- Pilar 2: Inovar -->
+                <div class="pillar-card">
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h4 class="pillar-title">Inovar</h4>
+                    <p class="pillar-desc">Impulsionar a especialidade com conhecimento atualizado, investigação científica e novas tecnologias aplicadas.</p>
+                </div>
+
+                <!-- Pilar 3: Valorizar -->
+                <div class="pillar-card">
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h4 class="pillar-title">Valorizar</h4>
+                    <p class="pillar-desc">Dignificar o médico do trabalho através da defesa das competências específicas e do justo reconhecimento da carreira.</p>
+                </div>
+
+                <!-- Pilar 4: Fortalecer -->
+                <div class="pillar-card">
+                    <div class="pillar-icon-wrapper">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="pillar-title">Fortalecer</h4>
+                    <p class="pillar-desc">Expandir a especialidade em todas as províncias, assegurando uma rede de cuidados ocupacionais forte em Angola.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       SECCAO APELO AO VOTO (CALL TO ACTION)
+       ========================================================================== -->
+    <section id="votar" class="cta-section">
+        <div class="container cta-container">
+            <i class="fa-solid fa-square-poll-horizontal cta-icon"></i>
+            <h2 class="cta-title">Juntos, construímos o futuro da Medicina do Trabalho em Angola</h2>
+            <p class="cta-description">
+                A eleição para a liderança do Colégio de Especialidade define o rumo da nossa profissão nos próximos anos. Junte-se a esta visão de rigor, proteção e excelência.
+            </p>
+            <a href="#inicio" class="cta-button">Fazer parte desta transformação</a>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       RODAPE (FOOTER)
+       ========================================================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <i class="fa-solid fa-caduceus-staff" style="color: var(--accent-color); font-size: 2rem;"></i>
+                    <div>
+                        <div class="footer-brand-title">Dra. Aida Azancot de Menezes</div>
+                        <div class="footer-brand-subtitle">Candidatura à Presidência do Colégio de Especialidade de Medicina do Trabalho</div>
+                    </div>
+                </div>
+                <div class="footer-social-actions">
+                    <span class="footer-action-item"><i class="fa-solid fa-thumbs-up"></i> Gostei</span>
+                    <span class="footer-action-item"><i class="fa-solid fa-comment"></i> Comente</span>
+                    <span class="footer-action-item"><i class="fa-solid fa-share-nodes"></i> Partilhe</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Campanha Eleitoral Institucional - Ordem dos Médicos de Angola.</p>
+                <p>&copy; 2026 Dra. Aida Azancot de Menezes. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
